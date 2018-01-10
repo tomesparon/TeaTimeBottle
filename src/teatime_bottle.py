@@ -5,19 +5,15 @@ from bottle import route, run, get, post, template, request
 
 
 
-@route('/')
-def index():
+##@route('/')
+##def index():
+##    return template('main_template')
+
+@get('/')
+def form():
     return template('main_template')
 
-@get('/tea')
-def form():
-    return '''<h2>Remote Kettle 0.1-alpha</h2>
-              <form method="POST" action="/tea">
-                <input name="hiddenfield" type="hidden" value='somevalue' />
-                <input type="submit" value="Turn the kettle on!"/>
-              </form>'''
-
-@post('/tea')
+@post('/')
 def submit():
     # grab data from form
     #name1 = request.forms.get('name1')
